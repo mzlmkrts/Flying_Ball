@@ -1,8 +1,67 @@
-# React + Vite
+# 🎯 Flying Ball
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+**A fast-paced clicker game — catch the ball before it gets away!**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+</div>
+
+---
+
+## 🎮 What is it?
+
+**Flying Ball** is a simple, addictive browser game. A blue ball floats around the screen, jumping to new positions every few seconds. Your job? **Click it.**
+
+Each successful click adds to your score and makes the ball move **faster**. The more you score, the quicker it leaps across the screen — and the harder it gets to catch.
+
+---
+
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 🖱️ **Click to score** | Tap the ball to add points |
+| ⚡ **Progressive difficulty** | Each click speeds up the ball's movement |
+| 🎯 **Smart paths** | The ball picks longer routes to avoid jittery shakes |
+| 📱 **Responsive** | Works on desktop, tablets, and phones |
+| 🌙 **Dark / Light** | Adapts to your system theme |
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Run the dev server
+npm run dev
+```
+
+Then open **http://localhost:5173** in your browser.
+
+---
+
+## 📜 Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
+
+---
+
+## 🛠️ Built With
+
+- [React](https://react.dev/) — UI library
+- [Vite](https://vitejs.dev/) — Build tool
+
+---
+
+<div align="center">
+
+*How high can you score?* 🏆
+
+</div>

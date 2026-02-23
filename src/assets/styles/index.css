@@ -13,6 +13,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,6 +36,15 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  /* Safe area for notched phones */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  box-sizing: border-box;
+}
+
+#root {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
 }
 
 h1 {
@@ -69,7 +86,7 @@ button:focus-visible {
 
 
 
-#flyButton{
+#flyButton {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -78,11 +95,13 @@ button:focus-visible {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border: none; /* Remove default border */
-  background-color: #007BFF; /* Example color */
+  border: none;
+  background-color: #007BFF;
   color: white;
   font-size: 3em;
-  transition: box-shadow 0.3s ease, transform 0.5s ease, top 1s ease, left 1s ease; /* Smooth transitions for movement and shadow */
+  transition: box-shadow 0.3s ease, transform 0.5s ease, top var(--move-duration, 1s) ease, left var(--move-duration, 1s) ease;
+  /* Prevent double-tap zoom on mobile */
+  touch-action: manipulation;
 }
 
 .flying {
@@ -90,11 +109,30 @@ button:focus-visible {
   transform: translateY(-10px); /* Simulate lift */
 }
 
+/* Instant move on click: no transition, disappear/reappear */
+#flyButton.instant-move {
+  transition: none !important;
+}
 
-/* Responsive design adjustments */
+#flyButton.vanishing {
+  opacity: 0;
+}
+
+
+/* Responsive design adjustments - use #flyButton for correct specificity */
 @media (max-width: 600px) {
-  .flyButton {
-    padding: 8px 16px; /* Smaller padding on small screens */
-    font-size: 0.9em; /* Slightly smaller text to fit better */
+  #flyButton {
+    width: 80px;
+    height: 80px;
+    font-size: 2em;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+  #flyButton {
+    width: 70px;
+    height: 70px;
+    font-size: 1.75em;
   }
 }
